@@ -1,0 +1,37 @@
+./tokenizer (input)
+(expected output)
+
+./tokenizer "today is a beautiful day"
+word “today”
+word “is”
+word “a”
+word “beautiful”
+word “day”
+
+./tokenizer "0x4356abdc 0777 [] "
+hex integer "0x4356abdc"
+octal integer "0777"
+left brace "["
+right brace "]"
+
+./tokenizer “array[xyz ] += pi 3.14159e-10”
+word "array"
+left brace "["
+word "xyz"
+right brace "]"
+add and assign "+="
+word "pi"
+floating point "3.14159e-10"
+
+
+./tokenizer "a fsda ewqilhui32 32525.3e321 afae 01423 qe wq"
+word "a"
+word "fsda"
+word "ewqilhui"
+decimal integer "32"
+floating point "32525.3e321"
+word "afae"
+octal integer "01423"
+word "qe"
+word "wq"
+
